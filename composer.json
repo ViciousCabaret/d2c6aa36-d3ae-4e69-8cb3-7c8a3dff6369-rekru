@@ -1,0 +1,23 @@
+{
+    "name": "viciouscabaretv/nnv-rekru",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ViciousCabaret",
+            "email": "mikolaj.porebski@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1"
+    },
+    "config": {
+        "platform": {
+            "php": "8.1"
+        }
+    }
+}
