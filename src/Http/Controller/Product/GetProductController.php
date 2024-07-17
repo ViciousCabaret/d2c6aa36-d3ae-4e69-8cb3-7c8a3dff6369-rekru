@@ -3,8 +3,7 @@
 namespace App\Http\Controller\Product;
 
 use App\Repository\ProductRepositoryInterface;
-use App\Service\Transformer\AddProductResponseTransformer;
-use App\Service\Validator\ValidatorInterface;
+use App\Service\Transformer\ProductTransformer;
 use Framework\Http\ControllerInterface;
 use Framework\Http\Request\RequestInterface;
 
@@ -12,7 +11,7 @@ class GetProductController implements ControllerInterface
 {
     public function __construct(
         private readonly ProductRepositoryInterface $productRepository,
-        private readonly AddProductResponseTransformer $productResponseTransformer,
+        private readonly ProductTransformer $productResponseTransformer,
     ) {
     }
 

@@ -4,7 +4,7 @@ namespace App\Service\Transformer;
 
 use App\Entity\Product;
 
-class AddProductResponseTransformer
+class ProductTransformer
 {
     public function transform(Product $product): array
     {

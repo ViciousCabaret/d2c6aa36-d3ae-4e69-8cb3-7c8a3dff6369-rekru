@@ -40,8 +40,13 @@ co zrobilem:
 - index.php: plik w ktorym tworzona jest instancja aplikacji i requirowane sa poszczegolne pliki konfiguracyjne
 - bootstrap.php: plik, w ktorym generowane sa zaleznosci
 - routes.php: plik, w ktorym definiowane sa routey dla rest api
-- simple DI: prosty di container przechowujacy gotowe instancje klas: [ClassName/ClassInterface => $classInstance]
-- RequestProcessor: prosty handler requestow pozwalajacy na zdefiniowanie sciezek i odpowiadajacych im instancji controllerow, na przyszlosc mozna rozbudowac zeby mozna bylo przekazac callable or something like this
+- framework:
+  - simple DI: prosty di container przechowujacy gotowe instancje klas: [ClassName/ClassInterface => $classInstance]
+  - RequestProcessor: prosty handler requestow pozwalajacy na zdefiniowanie sciezek i odpowiadajacych im instancji controllerow, na przyszlosc mozna rozbudowac zeby mozna bylo przekazac callable or something like this
+  - App: instancja aplikacji przyjmujaca 
+- AddProductValidator: prosty validator danych przychodzacych z body request
+- InMemoryProductRepository + ProductRepositoryInterface
+- ProductTransformer: klasa transformujaca instancje klasy Product do zwrocenia w odpowiednim formacie wg wytycznych
 
 co mozna zrobic:
 - dorobic jakis error handler middleware or something like this

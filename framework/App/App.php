@@ -2,12 +2,12 @@
 
 namespace Framework\App;
 
-use Framework\Http\Request\RequestProcessor;
+use Framework\Http\Request\RequestProcessorInterface;
 
 class App implements AppInterface
 {
     public function __construct(
-        private readonly RequestProcessor $requestProcessor,
+        private readonly RequestProcessorInterface $requestProcessor,
     ) {
     }
 
