@@ -1,17 +1,22 @@
 <?php
 
-namespace Repository;
+namespace App\Entity;
 
 class Product
 {
-    private $productId;
-    private $name;
-    private $price;
-    private $description;
-    private $sign;
+    private string $productId;
+    private string $name;
+    private int $price;
+    private string $description;
+    private string $sign;
 
-    public function __construct($productId, $name, $price, $description, $sign)
-    {
+    public function __construct(
+        string $productId,
+        string $name,
+        int $price,
+        string $description,
+        string $sign
+    ) {
         $this->productId = $productId;
         $this->name = $name;
         $this->price = $price;

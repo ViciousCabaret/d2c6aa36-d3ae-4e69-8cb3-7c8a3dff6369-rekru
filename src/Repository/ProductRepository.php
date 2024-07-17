@@ -1,15 +1,17 @@
 <?php
 
-namespace Repository;
+namespace App\Repository;
 
-class ProductRepository
+use App\Entity\Product;
+
+class ProductRepository implements ProductRepositoryInterface
 {
-    public function get($productId): Product
+    public function get(string $productId): Product
     {
-        return new Product(1, 'name', 20.3, 'description', uniqid());
+        return new Product($productId, 'name', 20.3, 'description', uniqid());
     }
 
-    public function save(string $name, float $price, string $description): int
+    public function save(Product $product): int
     {
         return mt_rand(1, 10);
     }
