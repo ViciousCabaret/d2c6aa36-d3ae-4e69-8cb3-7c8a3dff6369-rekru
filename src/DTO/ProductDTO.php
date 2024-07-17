@@ -10,7 +10,7 @@ class ProductDTO implements ValidatableObjectInterface
     public function __construct(
         private readonly string $productId,
         private readonly string $name,
-        private readonly int $price,
+        private readonly float $price,
         private readonly string $description,
         private readonly string $sign,
     ) {
@@ -26,7 +26,7 @@ class ProductDTO implements ValidatableObjectInterface
         return $this->name;
     }
 
-    public function getPrice(): int
+    public function getPrice(): float
     {
         return $this->price;
     }
@@ -46,7 +46,7 @@ class ProductDTO implements ValidatableObjectInterface
         return get_object_vars($this);
     }
 
-    public static function createFromRequest(array $data): self
+    public static function createFromRequestData(array $data): self
     {
         if (
             !array_key_exists('name', $data)

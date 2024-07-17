@@ -6,13 +6,14 @@ use App\Entity\Product;
 
 class ProductRepository implements ProductRepositoryInterface
 {
-    public function get(string $productId): Product
+    public function get(string $id): Product
     {
-        return new Product($productId, 'name', 20.3, 'description', uniqid());
+        return new Product($id, 'name', 20.3, 'description', uniqid());
     }
 
     public function save(Product $product): int
     {
+        //zapis w jakims zainjectowanym
         return mt_rand(1, 10);
     }
 }

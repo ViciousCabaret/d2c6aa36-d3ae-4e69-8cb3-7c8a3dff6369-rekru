@@ -24,45 +24,28 @@ class Product
         $this->sign = $sign;
     }
 
-    /**
-     * @return mixed
-     */
-    public function productId()
+    public function getProductId(): string
     {
         return $this->productId;
     }
 
-    /**
-     * @return mixed
-     */
-    public function name()
+    public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @return mixed
-     */
-    public function price()
+    public function getPrice(): int
     {
         return $this->price;
     }
 
-    /**
-     * @return mixed
-     */
-    public function description()
+    public function getDescription(): string
     {
         return $this->description;
     }
 
-    /**
-     * @return mixed
-     */
-    public function sign()
+    public function getSign(): string
     {
         return $this->sign;
     }
-
-
 }

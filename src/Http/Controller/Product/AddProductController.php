@@ -19,7 +19,8 @@ class AddProductController implements ControllerInterface
 
     public function execute(RequestInterface $request)
     {
-        $productDTO = ProductDTO::createFromRequest($request->getContent());
+        // (or create from array not sure)
+        $productDTO = ProductDTO::createFromRequestData($request->getContent());
 
         // to jest bardzo simplified bo rzuca wyjatki pojedynczo po kazdym bledzie, ale docelowo mozna zrobic system zwrotki wszystkich bledow na raz
         $this->validator->validate($productDTO);
@@ -27,11 +28,13 @@ class AddProductController implements ControllerInterface
         //normalnie here dispatchowalbym jakas komende cqrs na dodanie produktu
         //handler w konstruktorze przyjmuje product repository
         //invoke handlera tworzy new Product() z przyjetych danych i wykonuje save na repostiroy
+        //w handlerze rowniez wykonywana jest logika zamiany price floata na int i przekazanie dalej do repo
+        //jestem swiadomy edge case'ow podczas przyjmowania wartosci we floatach i pozniejszej zamiany na int, ale na ten moment nie testuje ani nie obsluguje wszystkich przypadkow
         $this->productRepository->save(
             new Product(
                 $productDTO->getProductId(),
                 $productDTO->getName(),
-                $productDTO->getPrice(),
+                $productDTO->getPrice() * 100,
                 $productDTO->getDescription(),
                 $productDTO->getSign(),
             ),

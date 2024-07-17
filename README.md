@@ -45,3 +45,6 @@ co zrobilem:
 
 co mozna zrobic:
 - dorobic jakis error handler middleware or something like this
+- dopisac unity
+- phpcs + phpcbf
+- github/ci.yml - odpalanie phpcs + unitow przy pr
