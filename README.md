@@ -53,3 +53,7 @@ co mozna zrobic:
 - dopisac unity
 - phpcs + phpcbf
 - github/ci.yml - odpalanie phpcs + unitow przy pr
+
+Kod nie jest napisany idelanie, w wielu miejscach odpuscilem pisanie konkretnej implementacji, czy olalem rzucanie konkretnych wyjatkow i zrobilem pare rzeczy po lebkach
+W standardowej sytuacji uzylbym jakiegos lekkiego frameworka typu Slim do obslugi http + paczek do walidacji, cqrsa od symfony itp itd, ale chcialem zaprezentowac zrozumienie dzialania aplikacji backendowych php i napisac wszystko od zera 
+Skupilem sie przede wszystkim na zaprezentowaniu +- pomyslu na lifecycle aplikacji  
