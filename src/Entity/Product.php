@@ -4,24 +4,13 @@ namespace App\Entity;
 
 class Product
 {
-    private string $productId;
-    private string $name;
-    private int $price;
-    private string $description;
-    private string $sign;
-
     public function __construct(
-        string $productId,
-        string $name,
-        int $price,
-        string $description,
-        string $sign
+        private string $productId,
+        private string $name,
+        private int $price,
+        private string $description,
+        private string $sign
     ) {
-        $this->productId = $productId;
-        $this->name = $name;
-        $this->price = $price;
-        $this->description = $description;
-        $this->sign = $sign;
     }
 
     public function getProductId(): string
