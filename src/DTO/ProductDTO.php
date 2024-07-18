@@ -8,17 +8,11 @@ use Exception;
 class ProductDTO implements ValidatableObjectInterface
 {
     public function __construct(
-        private readonly string $productId,
         private readonly string $name,
         private readonly float $price,
         private readonly string $description,
         private readonly string $sign,
     ) {
-    }
-
-    public function getProductId(): string
-    {
-        return $this->productId;
     }
 
     public function getName(): string
@@ -57,7 +51,6 @@ class ProductDTO implements ValidatableObjectInterface
         }
 
         return new self(
-            rand(0, 10),
             $data['name'],
             $data['price'],
             $data['description'],

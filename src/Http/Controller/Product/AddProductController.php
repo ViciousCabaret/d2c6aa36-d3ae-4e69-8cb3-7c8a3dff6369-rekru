@@ -32,7 +32,7 @@ class AddProductController implements ControllerInterface
         //jestem swiadomy edge case'ow podczas przyjmowania wartosci we floatach i pozniejszej zamiany na int, ale na ten moment nie testuje ani nie obsluguje wszystkich przypadkow
         $this->productRepository->save(
             new Product(
-                $productDTO->getProductId(),
+                rand(1, 10), // generate uuid
                 $productDTO->getName(),
                 $productDTO->getPrice() * 100,
                 $productDTO->getDescription(),
