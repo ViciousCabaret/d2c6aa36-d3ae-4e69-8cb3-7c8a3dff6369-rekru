@@ -25,7 +25,8 @@ class RequestProcessor implements RequestProcessorInterface
             !array_key_exists($requestUri, $this->registeredPaths)
             || !array_key_exists($requestMethod, $this->registeredPaths[$requestUri])
         ) {
-            throw new \Exception("404 somethign");
+            header("HTTP/1.0 404 Not Found", 404);
+            exit;
         }
 
         /** @var ControllerInterface $controller */
