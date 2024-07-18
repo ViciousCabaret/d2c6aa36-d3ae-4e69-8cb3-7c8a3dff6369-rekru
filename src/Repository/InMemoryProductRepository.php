@@ -6,6 +6,18 @@ use App\Entity\Product;
 
 class InMemoryProductRepository implements ProductRepositoryInterface
 {
+    // testing purposes - initiate products array
+    public function __construct()
+    {
+        $this->products[5] = new Product(
+            5,
+            'name',
+            5000,
+            'description',
+            'sign'
+        );
+    }
+
     private array $products = [];
 
     public function get(string $id): Product
