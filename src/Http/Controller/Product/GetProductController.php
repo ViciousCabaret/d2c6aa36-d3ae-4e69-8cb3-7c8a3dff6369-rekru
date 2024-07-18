@@ -11,17 +11,17 @@ class GetProductController implements ControllerInterface
 {
     public function __construct(
         private readonly ProductRepositoryInterface $productRepository,
-        private readonly ProductTransformer $productResponseTransformer,
+        private readonly ProductTransformer $productTransformer,
     ) {
     }
 
     public function execute(RequestInterface $request)
     {
-        //tu jako parametr w controllerze dostaje id produktu
+        //tu jako argument funkcji dostaje id produktu execute(RequestIn..., int $id)
         $id = 5;
         //dispatchuje query do ktorej handlera injectowany jest product repo, nie ma obslugi cqrs to robie wszystko tutaj
         $product = $this->productRepository->get($id);
 
-        var_dump($this->productResponseTransformer->transform($product));
+        var_dump($this->productTransformer->transform($product));
     }
 }
