@@ -1,10 +1,12 @@
 <?php
 
-use App\Http\Controller\MainController;
+use Framework\App\App;
 
-require_once __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/../bootstrap/bootstrap.php';
 
-$mainController = new MainController();
-$mainController->process();
+/** @var \Framework\Http\Request\RequestProcessorInterface $requestProcessor */
+$app = new App($requestProcessor);
+require __DIR__ . '/../bootstrap/routes.php';
 
+$app->run();
 exit;
